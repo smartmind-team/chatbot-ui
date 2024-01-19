@@ -6,6 +6,7 @@ export type LLMID =
   | AnthropicLLMID
   | MistralLLMID
   | PerplexityLLMID
+  | HuggingFaceLLMID
 
 // OpenAI Models (UPDATED 1/29/24)
 export type OpenAILLMID =
@@ -42,6 +43,9 @@ export type PerplexityLLMID =
   | "codellama-34b-instruct" // CodeLlama 34B Instruct
   | "codellama-70b-instruct" // CodeLlama 70B Instruct
 
+export type HuggingFaceLLMID =
+  | "mistralai/Mistral-7B-v0.1" // mistralai/Mistral
+  | "mistralai/Mistral-7B-Instruct-v0.1"
 export interface LLM {
   modelId: LLMID
   modelName: string

@@ -117,6 +117,10 @@ export const ProfileSettings: FC<ProfileSettingsProps> = ({}) => {
     profile?.openrouter_api_key || ""
   )
 
+  const [huggingFaceAPIKey, sethuggingFaceAPIKey] = useState(
+    profile?.huggingface_api_key || ""
+  )
+
   const handleSignOut = async () => {
     await supabase.auth.signOut()
     router.push("/login")
@@ -155,7 +159,8 @@ export const ProfileSettings: FC<ProfileSettingsProps> = ({}) => {
       azure_openai_45_turbo_id: azureOpenai45TurboID,
       azure_openai_45_vision_id: azureOpenai45VisionID,
       azure_openai_embeddings_id: azureEmbeddingsID,
-      openrouter_api_key: openrouterAPIKey
+      openrouter_api_key: openrouterAPIKey,
+      huggingface_api_key: huggingFaceAPIKey
     })
 
     setProfile(updatedProfile)
@@ -700,6 +705,22 @@ export const ProfileSettings: FC<ProfileSettingsProps> = ({}) => {
                       type="password"
                       value={openrouterAPIKey}
                       onChange={e => setOpenrouterAPIKey(e.target.value)}
+                    />
+                  </>
+                )}
+              </div>
+
+              <div className="space-y-1">
+                {envKeyMap["huggingface"] ? (
+                  <Label>Hugging Face API key set by admin.</Label>
+                ) : (
+                  <>
+                    <Label>Hugging Face API Key</Label>
+                    <Input
+                      placeholder="Hugging Face API Key"
+                      type="password"
+                      value={huggingFaceAPIKey}
+                      onChange={e => sethuggingFaceAPIKey(e.target.value)}
                     />
                   </>
                 )}

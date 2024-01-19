@@ -56,6 +56,7 @@ export default function SetupPage() {
   const [mistralAPIKey, setMistralAPIKey] = useState("")
   const [perplexityAPIKey, setPerplexityAPIKey] = useState("")
   const [openrouterAPIKey, setOpenrouterAPIKey] = useState("")
+  const [huggingFaceAPIKey, setHuggingFaceAPIKey] = useState("")
 
   useEffect(() => {
     ;(async () => {
@@ -131,7 +132,8 @@ export default function SetupPage() {
       azure_openai_35_turbo_id: azureOpenai35TurboID,
       azure_openai_45_turbo_id: azureOpenai45TurboID,
       azure_openai_45_vision_id: azureOpenai45VisionID,
-      azure_openai_embeddings_id: azureOpenaiEmbeddingsID
+      azure_openai_embeddings_id: azureOpenaiEmbeddingsID,
+      huggingface_api_key: huggingFaceAPIKey
     }
 
     const updatedProfile = await updateProfile(profile.id, updateProfilePayload)
@@ -196,6 +198,7 @@ export default function SetupPage() {
               mistralAPIKey={mistralAPIKey}
               perplexityAPIKey={perplexityAPIKey}
               useAzureOpenai={useAzureOpenai}
+              huggingFaceAPIKey={huggingFaceAPIKey}
               onOpenaiAPIKeyChange={setOpenaiAPIKey}
               onOpenaiOrgIDChange={setOpenaiOrgID}
               onAzureOpenaiAPIKeyChange={setAzureOpenaiAPIKey}
@@ -211,6 +214,7 @@ export default function SetupPage() {
               onUseAzureOpenaiChange={setUseAzureOpenai}
               openrouterAPIKey={openrouterAPIKey}
               onOpenrouterAPIKeyChange={setOpenrouterAPIKey}
+              onHuggingFaceAPIKeyChange={setHuggingFaceAPIKey}
             />
           </StepContainer>
         )

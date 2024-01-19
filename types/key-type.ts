@@ -5,3 +5,4 @@ export type EnvKey =
   | "MISTRAL_API_KEY"
   | "PERPLEXITY_API_KEY"
   | "AZURE_OPENAI_API_KEY"
+  | "HUGGINGFACE_API_KEY"

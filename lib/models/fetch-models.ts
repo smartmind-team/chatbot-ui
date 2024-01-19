@@ -11,7 +11,8 @@ export const fetchHostedModels = async (profile: Tables<"profiles">) => {
       "azure",
       "anthropic",
       "mistral",
-      "perplexity"
+      "perplexity",
+      "hugginface"
     ]
 
     const response = await fetch("/api/keys")

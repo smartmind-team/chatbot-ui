@@ -18,6 +18,7 @@ interface APIStepProps {
   perplexityAPIKey: string
   useAzureOpenai: boolean
   openrouterAPIKey: string
+  huggingFaceAPIKey: string
   onOpenrouterAPIKeyChange: (value: string) => void
   onOpenaiAPIKeyChange: (value: string) => void
   onOpenaiOrgIDChange: (value: string) => void
@@ -32,6 +33,7 @@ interface APIStepProps {
   onMistralAPIKeyChange: (value: string) => void
   onPerplexityAPIKeyChange: (value: string) => void
   onUseAzureOpenaiChange: (value: boolean) => void
+  onHuggingFaceAPIKeyChange: (value: string) => void
 }
 
 export const APIStep: FC<APIStepProps> = ({
@@ -49,6 +51,7 @@ export const APIStep: FC<APIStepProps> = ({
   perplexityAPIKey,
   openrouterAPIKey,
   useAzureOpenai,
+  huggingFaceAPIKey,
   onOpenaiAPIKeyChange,
   onOpenaiOrgIDChange,
   onAzureOpenaiAPIKeyChange,
@@ -62,7 +65,8 @@ export const APIStep: FC<APIStepProps> = ({
   onMistralAPIKeyChange,
   onPerplexityAPIKeyChange,
   onUseAzureOpenaiChange,
-  onOpenrouterAPIKeyChange
+  onOpenrouterAPIKeyChange,
+  onHuggingFaceAPIKeyChange
 }) => {
   return (
     <>
@@ -221,6 +225,17 @@ export const APIStep: FC<APIStepProps> = ({
           type="password"
           value={openrouterAPIKey}
           onChange={e => onOpenrouterAPIKeyChange(e.target.value)}
+        />
+      </div>
+
+      <div className="space-y-1">
+        <Label>Hugging Face API Key</Label>
+
+        <Input
+          placeholder="Hugging Face API Key"
+          type="password"
+          value={huggingFaceAPIKey}
+          onChange={e => onHuggingFaceAPIKeyChange(e.target.value)}
         />
       </div>
     </>

@@ -1102,6 +1102,7 @@ export interface Database {
           display_name: string
           google_gemini_api_key: string | null
           has_onboarded: boolean
+          huggingface_api_key: string | null
           id: string
           image_path: string
           image_url: string
@@ -1129,6 +1130,7 @@ export interface Database {
           display_name: string
           google_gemini_api_key?: string | null
           has_onboarded?: boolean
+          huggingface_api_key?: string | null
           id?: string
           image_path: string
           image_url: string
@@ -1156,6 +1158,7 @@ export interface Database {
           display_name?: string
           google_gemini_api_key?: string | null
           has_onboarded?: boolean
+          huggingface_api_key?: string | null
           id?: string
           image_path?: string
           image_url?: string
